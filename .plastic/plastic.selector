@@ -1,0 +1,4 @@
+repository "IA - Holistic3D@Leonardo_Lima_Studio@cloud"
+  path "/"
+    br "/main"
+    co "/main"
