@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Waypoint
   - ai
+  - waypoint
+  - hide
+  - cop
   layers:
   - Default
   - TransparentFX
