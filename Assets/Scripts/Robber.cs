@@ -12,13 +12,18 @@ public class Robber : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         agent = this.GetComponent<NavMeshAgent>();
         ds = target.GetComponent<Drive>();
     }
 
     void Seek(Vector3 location)
     {
+        
         agent.SetDestination(location);
+
     }
 
     void Flee(Vector3 location)
@@ -60,9 +65,7 @@ public class Robber : MonoBehaviour
         float wanderDistance = 10;
         float wanderJitter = 1;
 
-        wanderTarget += new Vector3(Random.Range(-1.0f, 1.0f) * wanderJitter,
-                                        0,
-                                        Random.Range(-1.0f, 1.0f) * wanderJitter);
+        wanderTarget += new Vector3(Random.Range(-1.0f, 1.0f) * wanderJitter, 0, Random.Range(-1.0f, 1.0f) * wanderJitter);
         wanderTarget.Normalize();
         wanderTarget *= wanderRadius;
 
@@ -136,10 +139,45 @@ public class Robber : MonoBehaviour
         return false;
     }
 
+    bool TargetCanSeeMe()
+    {
+        Vector3 toAgent = this.transform.position - target.transform.position;
+        float lookingAngle = Vector3.Angle(target.transform.forward, toAgent);
+
+        if (lookingAngle < 60)
+            return true;
+        return false;
+    }
+    bool coolDown = false;
+
+    void BehaviorCoolDown()
+    {
+        coolDown = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (CanSeeTarget())
-            CleverHide();
+        if (!coolDown)
+        {
+            if (CanSeeTarget() && TargetCanSeeMe())
+            {
+                agent.speed = 10;
+                CleverHide();
+                coolDown = true;
+                Invoke("BehaviorCoolDown", 5);
+            }
+            else
+            {
+                agent.speed = 3.5f;
+                Pursue();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 }

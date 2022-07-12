@@ -9,6 +9,7 @@ TagManager:
   - waypoint
   - hide
   - cop
+  - goal
   layers:
   - Default
   - TransparentFX
