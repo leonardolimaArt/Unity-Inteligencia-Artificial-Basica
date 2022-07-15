@@ -10,6 +10,7 @@ TagManager:
   - hide
   - cop
   - goal
+  - Obstacles
   layers:
   - Default
   - TransparentFX
