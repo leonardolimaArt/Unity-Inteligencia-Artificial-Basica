@@ -11,6 +11,7 @@ TagManager:
   - cop
   - goal
   - Obstacles
+  - wp
   layers:
   - Default
   - TransparentFX
