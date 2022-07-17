@@ -1,4 +1,4 @@
-#Unity-Inteligencia-Artificial-Basica
+# Unity - Basic Artificial Intelligence
 
 Content:<br>
  ▪ Move to Waypoint;<br>
