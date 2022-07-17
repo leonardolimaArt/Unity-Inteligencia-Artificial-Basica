@@ -1,13 +1,13 @@
-<h1>Unity-Inteligencia-Artificial-Basica<h1>
+#Unity-Inteligencia-Artificial-Basica
 
 Content:<br>
-Move to Waypoint;
-Move to multiple Waypoints;
-Basic Car AI;
-Pathfinding A* with NavMesh;
-Fish Crowd AI;
-Human Crowd AI - with Fleeing;
-Hide and Seek AI;
-Finite State Machine;
-Simple Line of Sight;
-Path for Point and Click.
+ ▪ Move to Waypoint;<br>
+ ▪ Move to multiple Waypoints;<br>
+ ▪ Basic Car AI;<br>
+ ▪ Pathfinding A* with NavMesh;<br>
+ ▪ Fish Crowd AI;<br>
+ ▪ Human Crowd AI - with Fleeing;<br>
+ ▪ Hide and Seek AI;<br>
+ ▪ Finite State Machine;<br>
+ ▪ Simple Line of Sight;<br>
+ ▪ Path for Point and Click.
