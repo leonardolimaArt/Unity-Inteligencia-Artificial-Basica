@@ -1,4 +1,5 @@
 # Unity - Basic Artificial Intelligence
+Project of my study on artificial intelligence with Unity.
 
 Content:<br>
 - Move to Waypoint;<br>
